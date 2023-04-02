@@ -9,6 +9,5 @@ In the new terminal
 In a separate terminal
 `docker cp qmk:/root/qmk_firmware/.build/. ./build`
 
-
-
-Note you might have to tweak the keymap itself for a configureation change to picked up on repeat compilation
+If you want to run those two commands in one, run the following from the host:
+`docker exec qmk bash -c 'qmk compile -kb gmmk/pro/rev1/iso -km kpisti' && docker cp qmk:/root/qmk_firmware/.build/. ./build`
