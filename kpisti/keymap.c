@@ -102,29 +102,24 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 //  92, Side led 08  
 
 bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
-    static uint32_t cycle_led_timer = 0;
-    static uint8_t  current_value   = 0;
     static uint8_t left_side_leds[8] = {68, 71, 74, 77, 81, 84, 88, 92};
     static uint8_t  right_side_leds[8] = {69, 72, 75, 78, 82, 85, 89, 93};
 
+    HSV current_hsv = rgb_matrix_get_hsv();
+    RGB current_rgb = hsv_to_rgb(current_hsv);
+
     if (host_keyboard_led_state().caps_lock) {
-        if (timer_elapsed32(cycle_led_timer) > 500) {
-            current_value = current_value == 0 ? 255 : 0;
-            cycle_led_timer = timer_read32();
-        }
-        HSV tempHSV = {.h = 0, .s = 255, .v = current_value};
-        RGB tempRGB = hsv_to_rgb(tempHSV);
         for (uint8_t i = 0; i < ARRAY_SIZE(left_side_leds); i++) {
-            rgb_matrix_set_color(left_side_leds[i], tempRGB.r, tempRGB.g, tempRGB.b);
-            rgb_matrix_set_color(right_side_leds[i], tempRGB.r, tempRGB.g, tempRGB.b);
-            }
+            rgb_matrix_set_color(left_side_leds[i], current_rgb.r, current_rgb.g, current_rgb.b);
+            rgb_matrix_set_color(right_side_leds[i], current_rgb.r, current_rgb.g, current_rgb.b);
+        }
     }
 	
     static uint8_t l2_functions[10] = {86, 2, 3, 4, 5, 38, 94, 96, 98, 80};
 	switch(get_highest_layer(layer_state)){  // special handling per layer
 		case 1:  //layer one
             for (uint8_t i = 0; i < ARRAY_SIZE(l2_functions); i++) {
-                RGB_MATRIX_INDICATOR_SET_COLOR(l2_functions[i], 255, 0, 0);
+                RGB_MATRIX_INDICATOR_SET_COLOR(l2_functions[i], current_rgb.r, current_rgb.g, current_rgb.b);
             }
             break;
 		default:

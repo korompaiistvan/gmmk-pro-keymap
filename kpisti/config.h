@@ -12,16 +12,16 @@
     
     // Startup values, when none have been set
     // #define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE // Sets the default effect mode, if none has been set (was RGB_MATRIX_SOLID_COLOR)
-    #define RGB_MATRIX_DEFAULT_HUE 24                         // Sets the default hue value, if none has been set
-    #define RGB_MATRIX_DEFAULT_SAT 255                        // Sets the default saturation value, if none has been set
-    #define RGB_MATRIX_DEFAULT_VAL 127                        // Sets the default brightness value, if none has been set
-    #define RGB_MATRIX_DEFAULT_SPD 127                        // Sets the default animation speed, if none has been set
+    #define RGB_MATRIX_DEFAULT_HUE 245                         // Sets the default hue value, if none has been set
+    #define RGB_MATRIX_DEFAULT_SAT 190                        // Sets the default saturation value, if none has been set
+    #define RGB_MATRIX_DEFAULT_VAL 255                        // Sets the default brightness value, if none has been set
+    #define RGB_MATRIX_DEFAULT_SPD 170                        // Sets the default animation speed, if none has been set
 
-    // #define ENABLE_RGB_MATRIX_NONE 0
-    // #define ENABLE_RGB_MATRIX_SOLID_COLOR 1     // Static single hue, no speed support
-    // #define ENABLE_RGB_MATRIX_ALPHAS_MODS         // Static dual hue, speed is hue for secondary hue
-    // #define ENABLE_RGB_MATRIX_BREATHING           // Single hue brightness cycling animation
-    // #define ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON  // Full gradient Chevron shapped scrolling left to right
+    #define ENABLE_RGB_MATRIX_NONE 0
+    #define ENABLE_RGB_MATRIX_SOLID_COLOR 1     // Static single hue, no speed support
+    #undef ENABLE_RGB_MATRIX_ALPHAS_MODS         // Static dual hue, speed is hue for secondary hue
+    #undef ENABLE_RGB_MATRIX_BREATHING           // Single hue brightness cycling animation
+    #undef ENABLE_RGB_MATRIX_RAINBOW_MOVING_CHEVRON  // Full gradient Chevron shapped scrolling left to right
     #undef ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT    // Static gradient left to right, speed controls how much gradient changes
     #undef ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN    // Static gradient top to bottom, speed controls how much gradient changes
     #undef ENABLE_RGB_MATRIX_BAND_SAT            // Single hue band fading saturation scrolling left to right
@@ -50,16 +50,15 @@
     #undef ENABLE_RGB_MATRIX_PIXEL_RAIN          // Randomly light keys with random hues
 
     #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE   // Pulses keys hit to hue & value then fades value out
-    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE      // Static single hue, pulses keys hit to shifted hue then fades to current hue
-    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE       // Hue & value pulse near a single key hit then fades value out
+    #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE      // Static single hue, pulses keys hit to shifted hue then fades to current hue
+    #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_WIDE       // Hue & value pulse near a single key hit then fades value out
     #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTIWIDE  // Hue & value pulse near multiple key hits then fades value out
-    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS      // Hue & value pulse the same column and row of a single key hit then fades value out
-    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTICROSS // Hue & value pulse the same column and row of multiple key hits then fades value out
-    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS      // Hue & value pulse away on the same column and row of a single key hit then fades value out
-    #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS // Hue & value pulse away on the same column and row of multiple key hits then fades value out
-    #define ENABLE_RGB_MATRIX_SPLASH              // Full gradient & value pulse away from a single key hit then fades value out
-    #define ENABLE_RGB_MATRIX_MULTISPLASH         // Full gradient & value pulse away from multiple key hits then fades value out
-    #define ENABLE_RGB_MATRIX_SOLID_SPLASH        // Hue & value pulse away from a single key hit then fades value out
-    #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH   // Hue & value pulse away from multiple key hits then fades value out
-    // #define RGB_MATRIX_EFFECT_MAX
+    #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_CROSS      // Hue & value pulse the same column and row of a single key hit then fades value out
+    #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTICROSS // Hue & value pulse the same column and row of multiple key hits then fades value out
+    #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_NEXUS      // Hue & value pulse away on the same column and row of a single key hit then fades value out
+    #undef ENABLE_RGB_MATRIX_SOLID_REACTIVE_MULTINEXUS // Hue & value pulse away on the same column and row of multiple key hits then fades value out
+    #undef ENABLE_RGB_MATRIX_SPLASH              // Full gradient & value pulse away from a single key hit then fades value out
+    #undef ENABLE_RGB_MATRIX_MULTISPLASH         // Full gradient & value pulse away from multiple key hits then fades value out
+    #undef ENABLE_RGB_MATRIX_SOLID_SPLASH        // Hue & value pulse away from a single key hit then fades value out
+    #undef ENABLE_RGB_MATRIX_SOLID_MULTISPLASH   // Hue & value pulse away from multiple key hits then fades value out
 #endif
